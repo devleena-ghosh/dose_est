@@ -1,0 +1,1041 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    AND
+    AP
+    AT
+    CLN
+    CM
+    COMMENT
+    DEFN
+    DF
+    EQ
+    F
+    GE
+    GT
+    LB
+    LC
+    LE
+    LT
+    RB
+    RC
+    T
+    TO
+
+Grammar
+
+Rule 0     S' -> expr
+Rule 1     expr -> expr ADD expr
+Rule 2     expr -> expr SUB expr
+Rule 3     expr -> expr MULT expr
+Rule 4     expr -> expr DIV expr
+Rule 5     expr -> expr POW expr
+Rule 6     expr -> LP expr RP
+Rule 7     expr -> SUB expr
+Rule 8     expr -> range
+Rule 9     expr -> trig_func
+Rule 10    expr -> exp_func
+Rule 11    trig_func -> trig LP expr RP
+Rule 12    exp_func -> EXP LP expr RP
+Rule 13    exp_func -> LOG LP expr RP
+Rule 14    exp_func -> SQRT LP expr RP
+Rule 15    trig -> SIN
+Rule 16    trig -> COS
+Rule 17    trig -> TAN
+Rule 18    empty -> <empty>
+Rule 19    range -> NUM
+Rule 20    range -> RAT
+Rule 21    range -> VAR
+
+Terminals, with rules where they appear
+
+ADD                  : 1
+AND                  : 
+AP                   : 
+AT                   : 
+CLN                  : 
+CM                   : 
+COMMENT              : 
+COS                  : 16
+DEFN                 : 
+DF                   : 
+DIV                  : 4
+EQ                   : 
+EXP                  : 12
+F                    : 
+GE                   : 
+GT                   : 
+LB                   : 
+LC                   : 
+LE                   : 
+LOG                  : 13
+LP                   : 6 11 12 13 14
+LT                   : 
+MULT                 : 3
+NUM                  : 19
+POW                  : 5
+RAT                  : 20
+RB                   : 
+RC                   : 
+RP                   : 6 11 12 13 14
+SIN                  : 15
+SQRT                 : 14
+SUB                  : 2 7
+T                    : 
+TAN                  : 17
+TO                   : 
+VAR                  : 21
+error                : 
+
+Nonterminals, with rules where they appear
+
+empty                : 
+exp_func             : 10
+expr                 : 1 1 2 2 3 3 4 4 5 5 6 7 11 12 13 14 0
+range                : 8
+trig                 : 11
+trig_func            : 9
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . expr
+    (1) expr -> . expr ADD expr
+    (2) expr -> . expr SUB expr
+    (3) expr -> . expr MULT expr
+    (4) expr -> . expr DIV expr
+    (5) expr -> . expr POW expr
+    (6) expr -> . LP expr RP
+    (7) expr -> . SUB expr
+    (8) expr -> . range
+    (9) expr -> . trig_func
+    (10) expr -> . exp_func
+    (19) range -> . NUM
+    (20) range -> . RAT
+    (21) range -> . VAR
+    (11) trig_func -> . trig LP expr RP
+    (12) exp_func -> . EXP LP expr RP
+    (13) exp_func -> . LOG LP expr RP
+    (14) exp_func -> . SQRT LP expr RP
+    (15) trig -> . SIN
+    (16) trig -> . COS
+    (17) trig -> . TAN
+
+    LP              shift and go to state 3
+    SUB             shift and go to state 2
+    NUM             shift and go to state 7
+    RAT             shift and go to state 8
+    VAR             shift and go to state 9
+    EXP             shift and go to state 11
+    LOG             shift and go to state 12
+    SQRT            shift and go to state 13
+    SIN             shift and go to state 14
+    COS             shift and go to state 15
+    TAN             shift and go to state 16
+
+    expr                           shift and go to state 1
+    range                          shift and go to state 4
+    trig_func                      shift and go to state 5
+    exp_func                       shift and go to state 6
+    trig                           shift and go to state 10
+
+state 1
+
+    (0) S' -> expr .
+    (1) expr -> expr . ADD expr
+    (2) expr -> expr . SUB expr
+    (3) expr -> expr . MULT expr
+    (4) expr -> expr . DIV expr
+    (5) expr -> expr . POW expr
+
+    ADD             shift and go to state 17
+    SUB             shift and go to state 18
+    MULT            shift and go to state 19
+    DIV             shift and go to state 20
+    POW             shift and go to state 21
+
+
+state 2
+
+    (7) expr -> SUB . expr
+    (1) expr -> . expr ADD expr
+    (2) expr -> . expr SUB expr
+    (3) expr -> . expr MULT expr
+    (4) expr -> . expr DIV expr
+    (5) expr -> . expr POW expr
+    (6) expr -> . LP expr RP
+    (7) expr -> . SUB expr
+    (8) expr -> . range
+    (9) expr -> . trig_func
+    (10) expr -> . exp_func
+    (19) range -> . NUM
+    (20) range -> . RAT
+    (21) range -> . VAR
+    (11) trig_func -> . trig LP expr RP
+    (12) exp_func -> . EXP LP expr RP
+    (13) exp_func -> . LOG LP expr RP
+    (14) exp_func -> . SQRT LP expr RP
+    (15) trig -> . SIN
+    (16) trig -> . COS
+    (17) trig -> . TAN
+
+    LP              shift and go to state 3
+    SUB             shift and go to state 2
+    NUM             shift and go to state 7
+    RAT             shift and go to state 8
+    VAR             shift and go to state 9
+    EXP             shift and go to state 11
+    LOG             shift and go to state 12
+    SQRT            shift and go to state 13
+    SIN             shift and go to state 14
+    COS             shift and go to state 15
+    TAN             shift and go to state 16
+
+    expr                           shift and go to state 22
+    range                          shift and go to state 4
+    trig_func                      shift and go to state 5
+    exp_func                       shift and go to state 6
+    trig                           shift and go to state 10
+
+state 3
+
+    (6) expr -> LP . expr RP
+    (1) expr -> . expr ADD expr
+    (2) expr -> . expr SUB expr
+    (3) expr -> . expr MULT expr
+    (4) expr -> . expr DIV expr
+    (5) expr -> . expr POW expr
+    (6) expr -> . LP expr RP
+    (7) expr -> . SUB expr
+    (8) expr -> . range
+    (9) expr -> . trig_func
+    (10) expr -> . exp_func
+    (19) range -> . NUM
+    (20) range -> . RAT
+    (21) range -> . VAR
+    (11) trig_func -> . trig LP expr RP
+    (12) exp_func -> . EXP LP expr RP
+    (13) exp_func -> . LOG LP expr RP
+    (14) exp_func -> . SQRT LP expr RP
+    (15) trig -> . SIN
+    (16) trig -> . COS
+    (17) trig -> . TAN
+
+    LP              shift and go to state 3
+    SUB             shift and go to state 2
+    NUM             shift and go to state 7
+    RAT             shift and go to state 8
+    VAR             shift and go to state 9
+    EXP             shift and go to state 11
+    LOG             shift and go to state 12
+    SQRT            shift and go to state 13
+    SIN             shift and go to state 14
+    COS             shift and go to state 15
+    TAN             shift and go to state 16
+
+    expr                           shift and go to state 23
+    range                          shift and go to state 4
+    trig_func                      shift and go to state 5
+    exp_func                       shift and go to state 6
+    trig                           shift and go to state 10
+
+state 4
+
+    (8) expr -> range .
+
+    ADD             reduce using rule 8 (expr -> range .)
+    SUB             reduce using rule 8 (expr -> range .)
+    MULT            reduce using rule 8 (expr -> range .)
+    DIV             reduce using rule 8 (expr -> range .)
+    POW             reduce using rule 8 (expr -> range .)
+    $end            reduce using rule 8 (expr -> range .)
+    RP              reduce using rule 8 (expr -> range .)
+
+
+state 5
+
+    (9) expr -> trig_func .
+
+    ADD             reduce using rule 9 (expr -> trig_func .)
+    SUB             reduce using rule 9 (expr -> trig_func .)
+    MULT            reduce using rule 9 (expr -> trig_func .)
+    DIV             reduce using rule 9 (expr -> trig_func .)
+    POW             reduce using rule 9 (expr -> trig_func .)
+    $end            reduce using rule 9 (expr -> trig_func .)
+    RP              reduce using rule 9 (expr -> trig_func .)
+
+
+state 6
+
+    (10) expr -> exp_func .
+
+    ADD             reduce using rule 10 (expr -> exp_func .)
+    SUB             reduce using rule 10 (expr -> exp_func .)
+    MULT            reduce using rule 10 (expr -> exp_func .)
+    DIV             reduce using rule 10 (expr -> exp_func .)
+    POW             reduce using rule 10 (expr -> exp_func .)
+    $end            reduce using rule 10 (expr -> exp_func .)
+    RP              reduce using rule 10 (expr -> exp_func .)
+
+
+state 7
+
+    (19) range -> NUM .
+
+    ADD             reduce using rule 19 (range -> NUM .)
+    SUB             reduce using rule 19 (range -> NUM .)
+    MULT            reduce using rule 19 (range -> NUM .)
+    DIV             reduce using rule 19 (range -> NUM .)
+    POW             reduce using rule 19 (range -> NUM .)
+    $end            reduce using rule 19 (range -> NUM .)
+    RP              reduce using rule 19 (range -> NUM .)
+
+
+state 8
+
+    (20) range -> RAT .
+
+    ADD             reduce using rule 20 (range -> RAT .)
+    SUB             reduce using rule 20 (range -> RAT .)
+    MULT            reduce using rule 20 (range -> RAT .)
+    DIV             reduce using rule 20 (range -> RAT .)
+    POW             reduce using rule 20 (range -> RAT .)
+    $end            reduce using rule 20 (range -> RAT .)
+    RP              reduce using rule 20 (range -> RAT .)
+
+
+state 9
+
+    (21) range -> VAR .
+
+    ADD             reduce using rule 21 (range -> VAR .)
+    SUB             reduce using rule 21 (range -> VAR .)
+    MULT            reduce using rule 21 (range -> VAR .)
+    DIV             reduce using rule 21 (range -> VAR .)
+    POW             reduce using rule 21 (range -> VAR .)
+    $end            reduce using rule 21 (range -> VAR .)
+    RP              reduce using rule 21 (range -> VAR .)
+
+
+state 10
+
+    (11) trig_func -> trig . LP expr RP
+
+    LP              shift and go to state 24
+
+
+state 11
+
+    (12) exp_func -> EXP . LP expr RP
+
+    LP              shift and go to state 25
+
+
+state 12
+
+    (13) exp_func -> LOG . LP expr RP
+
+    LP              shift and go to state 26
+
+
+state 13
+
+    (14) exp_func -> SQRT . LP expr RP
+
+    LP              shift and go to state 27
+
+
+state 14
+
+    (15) trig -> SIN .
+
+    LP              reduce using rule 15 (trig -> SIN .)
+
+
+state 15
+
+    (16) trig -> COS .
+
+    LP              reduce using rule 16 (trig -> COS .)
+
+
+state 16
+
+    (17) trig -> TAN .
+
+    LP              reduce using rule 17 (trig -> TAN .)
+
+
+state 17
+
+    (1) expr -> expr ADD . expr
+    (1) expr -> . expr ADD expr
+    (2) expr -> . expr SUB expr
+    (3) expr -> . expr MULT expr
+    (4) expr -> . expr DIV expr
+    (5) expr -> . expr POW expr
+    (6) expr -> . LP expr RP
+    (7) expr -> . SUB expr
+    (8) expr -> . range
+    (9) expr -> . trig_func
+    (10) expr -> . exp_func
+    (19) range -> . NUM
+    (20) range -> . RAT
+    (21) range -> . VAR
+    (11) trig_func -> . trig LP expr RP
+    (12) exp_func -> . EXP LP expr RP
+    (13) exp_func -> . LOG LP expr RP
+    (14) exp_func -> . SQRT LP expr RP
+    (15) trig -> . SIN
+    (16) trig -> . COS
+    (17) trig -> . TAN
+
+    LP              shift and go to state 3
+    SUB             shift and go to state 2
+    NUM             shift and go to state 7
+    RAT             shift and go to state 8
+    VAR             shift and go to state 9
+    EXP             shift and go to state 11
+    LOG             shift and go to state 12
+    SQRT            shift and go to state 13
+    SIN             shift and go to state 14
+    COS             shift and go to state 15
+    TAN             shift and go to state 16
+
+    expr                           shift and go to state 28
+    range                          shift and go to state 4
+    trig_func                      shift and go to state 5
+    exp_func                       shift and go to state 6
+    trig                           shift and go to state 10
+
+state 18
+
+    (2) expr -> expr SUB . expr
+    (1) expr -> . expr ADD expr
+    (2) expr -> . expr SUB expr
+    (3) expr -> . expr MULT expr
+    (4) expr -> . expr DIV expr
+    (5) expr -> . expr POW expr
+    (6) expr -> . LP expr RP
+    (7) expr -> . SUB expr
+    (8) expr -> . range
+    (9) expr -> . trig_func
+    (10) expr -> . exp_func
+    (19) range -> . NUM
+    (20) range -> . RAT
+    (21) range -> . VAR
+    (11) trig_func -> . trig LP expr RP
+    (12) exp_func -> . EXP LP expr RP
+    (13) exp_func -> . LOG LP expr RP
+    (14) exp_func -> . SQRT LP expr RP
+    (15) trig -> . SIN
+    (16) trig -> . COS
+    (17) trig -> . TAN
+
+    LP              shift and go to state 3
+    SUB             shift and go to state 2
+    NUM             shift and go to state 7
+    RAT             shift and go to state 8
+    VAR             shift and go to state 9
+    EXP             shift and go to state 11
+    LOG             shift and go to state 12
+    SQRT            shift and go to state 13
+    SIN             shift and go to state 14
+    COS             shift and go to state 15
+    TAN             shift and go to state 16
+
+    expr                           shift and go to state 29
+    range                          shift and go to state 4
+    trig_func                      shift and go to state 5
+    exp_func                       shift and go to state 6
+    trig                           shift and go to state 10
+
+state 19
+
+    (3) expr -> expr MULT . expr
+    (1) expr -> . expr ADD expr
+    (2) expr -> . expr SUB expr
+    (3) expr -> . expr MULT expr
+    (4) expr -> . expr DIV expr
+    (5) expr -> . expr POW expr
+    (6) expr -> . LP expr RP
+    (7) expr -> . SUB expr
+    (8) expr -> . range
+    (9) expr -> . trig_func
+    (10) expr -> . exp_func
+    (19) range -> . NUM
+    (20) range -> . RAT
+    (21) range -> . VAR
+    (11) trig_func -> . trig LP expr RP
+    (12) exp_func -> . EXP LP expr RP
+    (13) exp_func -> . LOG LP expr RP
+    (14) exp_func -> . SQRT LP expr RP
+    (15) trig -> . SIN
+    (16) trig -> . COS
+    (17) trig -> . TAN
+
+    LP              shift and go to state 3
+    SUB             shift and go to state 2
+    NUM             shift and go to state 7
+    RAT             shift and go to state 8
+    VAR             shift and go to state 9
+    EXP             shift and go to state 11
+    LOG             shift and go to state 12
+    SQRT            shift and go to state 13
+    SIN             shift and go to state 14
+    COS             shift and go to state 15
+    TAN             shift and go to state 16
+
+    expr                           shift and go to state 30
+    range                          shift and go to state 4
+    trig_func                      shift and go to state 5
+    exp_func                       shift and go to state 6
+    trig                           shift and go to state 10
+
+state 20
+
+    (4) expr -> expr DIV . expr
+    (1) expr -> . expr ADD expr
+    (2) expr -> . expr SUB expr
+    (3) expr -> . expr MULT expr
+    (4) expr -> . expr DIV expr
+    (5) expr -> . expr POW expr
+    (6) expr -> . LP expr RP
+    (7) expr -> . SUB expr
+    (8) expr -> . range
+    (9) expr -> . trig_func
+    (10) expr -> . exp_func
+    (19) range -> . NUM
+    (20) range -> . RAT
+    (21) range -> . VAR
+    (11) trig_func -> . trig LP expr RP
+    (12) exp_func -> . EXP LP expr RP
+    (13) exp_func -> . LOG LP expr RP
+    (14) exp_func -> . SQRT LP expr RP
+    (15) trig -> . SIN
+    (16) trig -> . COS
+    (17) trig -> . TAN
+
+    LP              shift and go to state 3
+    SUB             shift and go to state 2
+    NUM             shift and go to state 7
+    RAT             shift and go to state 8
+    VAR             shift and go to state 9
+    EXP             shift and go to state 11
+    LOG             shift and go to state 12
+    SQRT            shift and go to state 13
+    SIN             shift and go to state 14
+    COS             shift and go to state 15
+    TAN             shift and go to state 16
+
+    expr                           shift and go to state 31
+    range                          shift and go to state 4
+    trig_func                      shift and go to state 5
+    exp_func                       shift and go to state 6
+    trig                           shift and go to state 10
+
+state 21
+
+    (5) expr -> expr POW . expr
+    (1) expr -> . expr ADD expr
+    (2) expr -> . expr SUB expr
+    (3) expr -> . expr MULT expr
+    (4) expr -> . expr DIV expr
+    (5) expr -> . expr POW expr
+    (6) expr -> . LP expr RP
+    (7) expr -> . SUB expr
+    (8) expr -> . range
+    (9) expr -> . trig_func
+    (10) expr -> . exp_func
+    (19) range -> . NUM
+    (20) range -> . RAT
+    (21) range -> . VAR
+    (11) trig_func -> . trig LP expr RP
+    (12) exp_func -> . EXP LP expr RP
+    (13) exp_func -> . LOG LP expr RP
+    (14) exp_func -> . SQRT LP expr RP
+    (15) trig -> . SIN
+    (16) trig -> . COS
+    (17) trig -> . TAN
+
+    LP              shift and go to state 3
+    SUB             shift and go to state 2
+    NUM             shift and go to state 7
+    RAT             shift and go to state 8
+    VAR             shift and go to state 9
+    EXP             shift and go to state 11
+    LOG             shift and go to state 12
+    SQRT            shift and go to state 13
+    SIN             shift and go to state 14
+    COS             shift and go to state 15
+    TAN             shift and go to state 16
+
+    expr                           shift and go to state 32
+    range                          shift and go to state 4
+    trig_func                      shift and go to state 5
+    exp_func                       shift and go to state 6
+    trig                           shift and go to state 10
+
+state 22
+
+    (7) expr -> SUB expr .
+    (1) expr -> expr . ADD expr
+    (2) expr -> expr . SUB expr
+    (3) expr -> expr . MULT expr
+    (4) expr -> expr . DIV expr
+    (5) expr -> expr . POW expr
+
+    ADD             reduce using rule 7 (expr -> SUB expr .)
+    SUB             reduce using rule 7 (expr -> SUB expr .)
+    MULT            reduce using rule 7 (expr -> SUB expr .)
+    DIV             reduce using rule 7 (expr -> SUB expr .)
+    $end            reduce using rule 7 (expr -> SUB expr .)
+    RP              reduce using rule 7 (expr -> SUB expr .)
+    POW             shift and go to state 21
+
+  ! POW             [ reduce using rule 7 (expr -> SUB expr .) ]
+  ! ADD             [ shift and go to state 17 ]
+  ! SUB             [ shift and go to state 18 ]
+  ! MULT            [ shift and go to state 19 ]
+  ! DIV             [ shift and go to state 20 ]
+
+
+state 23
+
+    (6) expr -> LP expr . RP
+    (1) expr -> expr . ADD expr
+    (2) expr -> expr . SUB expr
+    (3) expr -> expr . MULT expr
+    (4) expr -> expr . DIV expr
+    (5) expr -> expr . POW expr
+
+    RP              shift and go to state 33
+    ADD             shift and go to state 17
+    SUB             shift and go to state 18
+    MULT            shift and go to state 19
+    DIV             shift and go to state 20
+    POW             shift and go to state 21
+
+
+state 24
+
+    (11) trig_func -> trig LP . expr RP
+    (1) expr -> . expr ADD expr
+    (2) expr -> . expr SUB expr
+    (3) expr -> . expr MULT expr
+    (4) expr -> . expr DIV expr
+    (5) expr -> . expr POW expr
+    (6) expr -> . LP expr RP
+    (7) expr -> . SUB expr
+    (8) expr -> . range
+    (9) expr -> . trig_func
+    (10) expr -> . exp_func
+    (19) range -> . NUM
+    (20) range -> . RAT
+    (21) range -> . VAR
+    (11) trig_func -> . trig LP expr RP
+    (12) exp_func -> . EXP LP expr RP
+    (13) exp_func -> . LOG LP expr RP
+    (14) exp_func -> . SQRT LP expr RP
+    (15) trig -> . SIN
+    (16) trig -> . COS
+    (17) trig -> . TAN
+
+    LP              shift and go to state 3
+    SUB             shift and go to state 2
+    NUM             shift and go to state 7
+    RAT             shift and go to state 8
+    VAR             shift and go to state 9
+    EXP             shift and go to state 11
+    LOG             shift and go to state 12
+    SQRT            shift and go to state 13
+    SIN             shift and go to state 14
+    COS             shift and go to state 15
+    TAN             shift and go to state 16
+
+    trig                           shift and go to state 10
+    expr                           shift and go to state 34
+    range                          shift and go to state 4
+    trig_func                      shift and go to state 5
+    exp_func                       shift and go to state 6
+
+state 25
+
+    (12) exp_func -> EXP LP . expr RP
+    (1) expr -> . expr ADD expr
+    (2) expr -> . expr SUB expr
+    (3) expr -> . expr MULT expr
+    (4) expr -> . expr DIV expr
+    (5) expr -> . expr POW expr
+    (6) expr -> . LP expr RP
+    (7) expr -> . SUB expr
+    (8) expr -> . range
+    (9) expr -> . trig_func
+    (10) expr -> . exp_func
+    (19) range -> . NUM
+    (20) range -> . RAT
+    (21) range -> . VAR
+    (11) trig_func -> . trig LP expr RP
+    (12) exp_func -> . EXP LP expr RP
+    (13) exp_func -> . LOG LP expr RP
+    (14) exp_func -> . SQRT LP expr RP
+    (15) trig -> . SIN
+    (16) trig -> . COS
+    (17) trig -> . TAN
+
+    LP              shift and go to state 3
+    SUB             shift and go to state 2
+    NUM             shift and go to state 7
+    RAT             shift and go to state 8
+    VAR             shift and go to state 9
+    EXP             shift and go to state 11
+    LOG             shift and go to state 12
+    SQRT            shift and go to state 13
+    SIN             shift and go to state 14
+    COS             shift and go to state 15
+    TAN             shift and go to state 16
+
+    expr                           shift and go to state 35
+    range                          shift and go to state 4
+    trig_func                      shift and go to state 5
+    exp_func                       shift and go to state 6
+    trig                           shift and go to state 10
+
+state 26
+
+    (13) exp_func -> LOG LP . expr RP
+    (1) expr -> . expr ADD expr
+    (2) expr -> . expr SUB expr
+    (3) expr -> . expr MULT expr
+    (4) expr -> . expr DIV expr
+    (5) expr -> . expr POW expr
+    (6) expr -> . LP expr RP
+    (7) expr -> . SUB expr
+    (8) expr -> . range
+    (9) expr -> . trig_func
+    (10) expr -> . exp_func
+    (19) range -> . NUM
+    (20) range -> . RAT
+    (21) range -> . VAR
+    (11) trig_func -> . trig LP expr RP
+    (12) exp_func -> . EXP LP expr RP
+    (13) exp_func -> . LOG LP expr RP
+    (14) exp_func -> . SQRT LP expr RP
+    (15) trig -> . SIN
+    (16) trig -> . COS
+    (17) trig -> . TAN
+
+    LP              shift and go to state 3
+    SUB             shift and go to state 2
+    NUM             shift and go to state 7
+    RAT             shift and go to state 8
+    VAR             shift and go to state 9
+    EXP             shift and go to state 11
+    LOG             shift and go to state 12
+    SQRT            shift and go to state 13
+    SIN             shift and go to state 14
+    COS             shift and go to state 15
+    TAN             shift and go to state 16
+
+    expr                           shift and go to state 36
+    range                          shift and go to state 4
+    trig_func                      shift and go to state 5
+    exp_func                       shift and go to state 6
+    trig                           shift and go to state 10
+
+state 27
+
+    (14) exp_func -> SQRT LP . expr RP
+    (1) expr -> . expr ADD expr
+    (2) expr -> . expr SUB expr
+    (3) expr -> . expr MULT expr
+    (4) expr -> . expr DIV expr
+    (5) expr -> . expr POW expr
+    (6) expr -> . LP expr RP
+    (7) expr -> . SUB expr
+    (8) expr -> . range
+    (9) expr -> . trig_func
+    (10) expr -> . exp_func
+    (19) range -> . NUM
+    (20) range -> . RAT
+    (21) range -> . VAR
+    (11) trig_func -> . trig LP expr RP
+    (12) exp_func -> . EXP LP expr RP
+    (13) exp_func -> . LOG LP expr RP
+    (14) exp_func -> . SQRT LP expr RP
+    (15) trig -> . SIN
+    (16) trig -> . COS
+    (17) trig -> . TAN
+
+    LP              shift and go to state 3
+    SUB             shift and go to state 2
+    NUM             shift and go to state 7
+    RAT             shift and go to state 8
+    VAR             shift and go to state 9
+    EXP             shift and go to state 11
+    LOG             shift and go to state 12
+    SQRT            shift and go to state 13
+    SIN             shift and go to state 14
+    COS             shift and go to state 15
+    TAN             shift and go to state 16
+
+    expr                           shift and go to state 37
+    range                          shift and go to state 4
+    trig_func                      shift and go to state 5
+    exp_func                       shift and go to state 6
+    trig                           shift and go to state 10
+
+state 28
+
+    (1) expr -> expr ADD expr .
+    (1) expr -> expr . ADD expr
+    (2) expr -> expr . SUB expr
+    (3) expr -> expr . MULT expr
+    (4) expr -> expr . DIV expr
+    (5) expr -> expr . POW expr
+
+    ADD             reduce using rule 1 (expr -> expr ADD expr .)
+    SUB             reduce using rule 1 (expr -> expr ADD expr .)
+    $end            reduce using rule 1 (expr -> expr ADD expr .)
+    RP              reduce using rule 1 (expr -> expr ADD expr .)
+    MULT            shift and go to state 19
+    DIV             shift and go to state 20
+    POW             shift and go to state 21
+
+  ! MULT            [ reduce using rule 1 (expr -> expr ADD expr .) ]
+  ! DIV             [ reduce using rule 1 (expr -> expr ADD expr .) ]
+  ! POW             [ reduce using rule 1 (expr -> expr ADD expr .) ]
+  ! ADD             [ shift and go to state 17 ]
+  ! SUB             [ shift and go to state 18 ]
+
+
+state 29
+
+    (2) expr -> expr SUB expr .
+    (1) expr -> expr . ADD expr
+    (2) expr -> expr . SUB expr
+    (3) expr -> expr . MULT expr
+    (4) expr -> expr . DIV expr
+    (5) expr -> expr . POW expr
+
+    ADD             reduce using rule 2 (expr -> expr SUB expr .)
+    SUB             reduce using rule 2 (expr -> expr SUB expr .)
+    $end            reduce using rule 2 (expr -> expr SUB expr .)
+    RP              reduce using rule 2 (expr -> expr SUB expr .)
+    MULT            shift and go to state 19
+    DIV             shift and go to state 20
+    POW             shift and go to state 21
+
+  ! MULT            [ reduce using rule 2 (expr -> expr SUB expr .) ]
+  ! DIV             [ reduce using rule 2 (expr -> expr SUB expr .) ]
+  ! POW             [ reduce using rule 2 (expr -> expr SUB expr .) ]
+  ! ADD             [ shift and go to state 17 ]
+  ! SUB             [ shift and go to state 18 ]
+
+
+state 30
+
+    (3) expr -> expr MULT expr .
+    (1) expr -> expr . ADD expr
+    (2) expr -> expr . SUB expr
+    (3) expr -> expr . MULT expr
+    (4) expr -> expr . DIV expr
+    (5) expr -> expr . POW expr
+
+    ADD             reduce using rule 3 (expr -> expr MULT expr .)
+    SUB             reduce using rule 3 (expr -> expr MULT expr .)
+    MULT            reduce using rule 3 (expr -> expr MULT expr .)
+    DIV             reduce using rule 3 (expr -> expr MULT expr .)
+    $end            reduce using rule 3 (expr -> expr MULT expr .)
+    RP              reduce using rule 3 (expr -> expr MULT expr .)
+    POW             shift and go to state 21
+
+  ! POW             [ reduce using rule 3 (expr -> expr MULT expr .) ]
+  ! ADD             [ shift and go to state 17 ]
+  ! SUB             [ shift and go to state 18 ]
+  ! MULT            [ shift and go to state 19 ]
+  ! DIV             [ shift and go to state 20 ]
+
+
+state 31
+
+    (4) expr -> expr DIV expr .
+    (1) expr -> expr . ADD expr
+    (2) expr -> expr . SUB expr
+    (3) expr -> expr . MULT expr
+    (4) expr -> expr . DIV expr
+    (5) expr -> expr . POW expr
+
+    ADD             reduce using rule 4 (expr -> expr DIV expr .)
+    SUB             reduce using rule 4 (expr -> expr DIV expr .)
+    MULT            reduce using rule 4 (expr -> expr DIV expr .)
+    DIV             reduce using rule 4 (expr -> expr DIV expr .)
+    $end            reduce using rule 4 (expr -> expr DIV expr .)
+    RP              reduce using rule 4 (expr -> expr DIV expr .)
+    POW             shift and go to state 21
+
+  ! POW             [ reduce using rule 4 (expr -> expr DIV expr .) ]
+  ! ADD             [ shift and go to state 17 ]
+  ! SUB             [ shift and go to state 18 ]
+  ! MULT            [ shift and go to state 19 ]
+  ! DIV             [ shift and go to state 20 ]
+
+
+state 32
+
+    (5) expr -> expr POW expr .
+    (1) expr -> expr . ADD expr
+    (2) expr -> expr . SUB expr
+    (3) expr -> expr . MULT expr
+    (4) expr -> expr . DIV expr
+    (5) expr -> expr . POW expr
+
+    ADD             reduce using rule 5 (expr -> expr POW expr .)
+    SUB             reduce using rule 5 (expr -> expr POW expr .)
+    MULT            reduce using rule 5 (expr -> expr POW expr .)
+    DIV             reduce using rule 5 (expr -> expr POW expr .)
+    $end            reduce using rule 5 (expr -> expr POW expr .)
+    RP              reduce using rule 5 (expr -> expr POW expr .)
+    POW             shift and go to state 21
+
+  ! POW             [ reduce using rule 5 (expr -> expr POW expr .) ]
+  ! ADD             [ shift and go to state 17 ]
+  ! SUB             [ shift and go to state 18 ]
+  ! MULT            [ shift and go to state 19 ]
+  ! DIV             [ shift and go to state 20 ]
+
+
+state 33
+
+    (6) expr -> LP expr RP .
+
+    ADD             reduce using rule 6 (expr -> LP expr RP .)
+    SUB             reduce using rule 6 (expr -> LP expr RP .)
+    MULT            reduce using rule 6 (expr -> LP expr RP .)
+    DIV             reduce using rule 6 (expr -> LP expr RP .)
+    POW             reduce using rule 6 (expr -> LP expr RP .)
+    $end            reduce using rule 6 (expr -> LP expr RP .)
+    RP              reduce using rule 6 (expr -> LP expr RP .)
+
+
+state 34
+
+    (11) trig_func -> trig LP expr . RP
+    (1) expr -> expr . ADD expr
+    (2) expr -> expr . SUB expr
+    (3) expr -> expr . MULT expr
+    (4) expr -> expr . DIV expr
+    (5) expr -> expr . POW expr
+
+    RP              shift and go to state 38
+    ADD             shift and go to state 17
+    SUB             shift and go to state 18
+    MULT            shift and go to state 19
+    DIV             shift and go to state 20
+    POW             shift and go to state 21
+
+
+state 35
+
+    (12) exp_func -> EXP LP expr . RP
+    (1) expr -> expr . ADD expr
+    (2) expr -> expr . SUB expr
+    (3) expr -> expr . MULT expr
+    (4) expr -> expr . DIV expr
+    (5) expr -> expr . POW expr
+
+    RP              shift and go to state 39
+    ADD             shift and go to state 17
+    SUB             shift and go to state 18
+    MULT            shift and go to state 19
+    DIV             shift and go to state 20
+    POW             shift and go to state 21
+
+
+state 36
+
+    (13) exp_func -> LOG LP expr . RP
+    (1) expr -> expr . ADD expr
+    (2) expr -> expr . SUB expr
+    (3) expr -> expr . MULT expr
+    (4) expr -> expr . DIV expr
+    (5) expr -> expr . POW expr
+
+    RP              shift and go to state 40
+    ADD             shift and go to state 17
+    SUB             shift and go to state 18
+    MULT            shift and go to state 19
+    DIV             shift and go to state 20
+    POW             shift and go to state 21
+
+
+state 37
+
+    (14) exp_func -> SQRT LP expr . RP
+    (1) expr -> expr . ADD expr
+    (2) expr -> expr . SUB expr
+    (3) expr -> expr . MULT expr
+    (4) expr -> expr . DIV expr
+    (5) expr -> expr . POW expr
+
+    RP              shift and go to state 41
+    ADD             shift and go to state 17
+    SUB             shift and go to state 18
+    MULT            shift and go to state 19
+    DIV             shift and go to state 20
+    POW             shift and go to state 21
+
+
+state 38
+
+    (11) trig_func -> trig LP expr RP .
+
+    ADD             reduce using rule 11 (trig_func -> trig LP expr RP .)
+    SUB             reduce using rule 11 (trig_func -> trig LP expr RP .)
+    MULT            reduce using rule 11 (trig_func -> trig LP expr RP .)
+    DIV             reduce using rule 11 (trig_func -> trig LP expr RP .)
+    POW             reduce using rule 11 (trig_func -> trig LP expr RP .)
+    $end            reduce using rule 11 (trig_func -> trig LP expr RP .)
+    RP              reduce using rule 11 (trig_func -> trig LP expr RP .)
+
+
+state 39
+
+    (12) exp_func -> EXP LP expr RP .
+
+    ADD             reduce using rule 12 (exp_func -> EXP LP expr RP .)
+    SUB             reduce using rule 12 (exp_func -> EXP LP expr RP .)
+    MULT            reduce using rule 12 (exp_func -> EXP LP expr RP .)
+    DIV             reduce using rule 12 (exp_func -> EXP LP expr RP .)
+    POW             reduce using rule 12 (exp_func -> EXP LP expr RP .)
+    $end            reduce using rule 12 (exp_func -> EXP LP expr RP .)
+    RP              reduce using rule 12 (exp_func -> EXP LP expr RP .)
+
+
+state 40
+
+    (13) exp_func -> LOG LP expr RP .
+
+    ADD             reduce using rule 13 (exp_func -> LOG LP expr RP .)
+    SUB             reduce using rule 13 (exp_func -> LOG LP expr RP .)
+    MULT            reduce using rule 13 (exp_func -> LOG LP expr RP .)
+    DIV             reduce using rule 13 (exp_func -> LOG LP expr RP .)
+    POW             reduce using rule 13 (exp_func -> LOG LP expr RP .)
+    $end            reduce using rule 13 (exp_func -> LOG LP expr RP .)
+    RP              reduce using rule 13 (exp_func -> LOG LP expr RP .)
+
+
+state 41
+
+    (14) exp_func -> SQRT LP expr RP .
+
+    ADD             reduce using rule 14 (exp_func -> SQRT LP expr RP .)
+    SUB             reduce using rule 14 (exp_func -> SQRT LP expr RP .)
+    MULT            reduce using rule 14 (exp_func -> SQRT LP expr RP .)
+    DIV             reduce using rule 14 (exp_func -> SQRT LP expr RP .)
+    POW             reduce using rule 14 (exp_func -> SQRT LP expr RP .)
+    $end            reduce using rule 14 (exp_func -> SQRT LP expr RP .)
+    RP              reduce using rule 14 (exp_func -> SQRT LP expr RP .)
+

@@ -1,0 +1,4 @@
+TSH_1 = (q_7s*TSHconv);
+FT4_1 = (q1F*T4conv*0.45);
+T3_1 = (q_4s*T3conv);
+T4_1 = (q_1s*T4conv);

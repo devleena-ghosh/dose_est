@@ -1,0 +1,288 @@
+#define pi (22/7.0)
+#define u1 0.0
+#define u4 0.0
+#define kdelay (5.0/8)
+#define d_2 0.88
+#define d_4 0.88
+
+#define mint4 (30/777.0)
+#define maxt4 (250/777.0)
+#define eta 0.0001
+
+#define p_0 2*pi/24.0
+#define p_2 8
+#define p_3 0.868
+#define p_4 0.108
+#define p_5 584
+#define p_6 1503
+#define p_8 0.000214
+#define p_9 0.000128
+#define p_11 0.88
+#define p_12 0.0189
+#define p_14 2.85
+#define p_15 6.63e-4
+#define p_16 95
+#define p_17 0.00074619
+#define p_18 0.075
+#define p_20 5.37
+#define p_21 0.0689
+#define p_22 127
+#define p_23 2043
+#define p_24 0.00395
+#define p_25 0.00185
+#define p_26 0.00061
+#define p_27 -0.000505
+#define p_28 0.88
+#define p_29 0.207
+#define p_30 1166
+#define p_31 581
+#define p_32 2.37
+#define p_33 3.71
+#define p_34 0.53
+#define p_35 0.037
+#define p_36 23
+#define p_38 0.29
+#define p_39 0.006
+#define p_41 0.0034
+#define p_42 5
+#define p_43 1.3 
+#define p_44 (0.12*d_2)
+#define p_45 1.78
+#define p_46 (0.12*d_4)
+#define p_47 3.2
+#define p_48 5.2
+
+#define cd_1 1.0
+#define cp_1 0.00174155
+#define cp_19 3.3572e-4
+#define cp_37 0.118
+#define cp_7 0.000289
+#define cp_10 -8.83e-6
+#define cp_40 0.037
+#define cp_13 0.00998996
+
+#define dd_1 1.0
+#define dp_1 0.00174155
+#define dp_19 3.3572e-4
+#define dp_37 0.118
+#define dp_7 0.000289
+#define dp_10 -8.83e-6
+#define dp_40 0.037
+#define dp_13 0.00998996
+
+#define d_1_err 0.0
+#define p_1_err 0.0
+#define p_19_err 0.0
+#define p_37_err 0.0
+#define p_7_err 0.0
+#define p_10_err 0.0
+#define p_40_err 0.0
+#define p_13_err 0.0
+
+#define ic_0 0.0
+#define ic_1 0.322114215761171
+#define ic_2 0.201296960359917
+#define ic_3 0.638967411907560
+#define ic_4 0.00663104034826483
+#define ic_5 0.0112595761822961
+#define ic_6 0.0652960640300348
+#define ic_7 1.78829584764370
+#define ic_8 7.05727560072869
+#define ic_9 7.05714474742141
+#define ic_10 0.0
+#define ic_11 0.0
+
+#define ic_14 3.34289716182018
+#define ic_15 3.69277248068433
+#define ic_16 3.87942133769244
+#define ic_17 3.90061903207543
+#define ic_18 3.77875734283571
+#define ic_19 3.55364471589659
+
+#define s0 (5*24)
+#define s1 (1*1.0) 
+#define s2 (1*1.0) 
+#define s3 (1*1.0) 
+#define s4 (1*1.0) 
+#define s5 (1*1.0) 
+#define s6 (1*1.0) 
+#define s7 (ic_7*1.0) 
+#define s8 (ic_8*1.0) 
+#define s9 (ic_9*1.0) 
+#define s10 (1/1.0) 
+#define s11 (1/1.0)  
+
+#define s14 (ic_14*1.0)   
+#define s15 (ic_15*1.0)     
+#define s16 (ic_16*1.0)     
+#define s17 (ic_17*1.0)     
+#define s18 (ic_18*1.0)     
+#define s19 (ic_19*1.0)   
+
+#define s_t4 (1/1.0) 
+#define s_t3 (1/1.0) 
+
+#define s1_d1 (dd_1*0.001)
+#define s_d1 (dd_1*0.001)
+#define s_p1 (0.1) 
+#define s_p19 (0.01) 
+#define s_p37 (0.1) 
+#define s_p7 (0.01) 
+#define s_p10 (0.000001) 
+#define s_p40 (0.01) 
+#define s_p13 (0.001) 
+
+#define q_0s (tm*s0) 
+#define q_1s (q_1*s1) 
+#define q_2s (q_2*s2) 
+#define q_3s (q_3*s3) 
+#define q_4s (q_4*s4) 
+#define q_5s (q_5*s5) 
+#define q_6s (q_6*s6) 
+#define q_7s (q_7*s7) 
+#define q_8s (q_8*s8)
+#define q_9s (q_9*s9)
+#define q_10s (q_10*s10)
+#define q_11s (q_11*s11)
+
+#define q_14s (q_14*s14)   
+#define q_15s (q_15*s15)   
+#define q_16s (q_16*s16)   
+#define q_17s (q_17*s17)   
+#define q_18s (q_18*s18)   
+#define q_19s (q_19*s19)  
+
+
+#define et4s (et4*s_t4) 
+#define et3s (et3*s_t3) 
+
+#define d_1 (d_1s * s_d1) 
+#define p_1 (p_1s * s_p1) 
+#define p_19 (p_19s * s_p19) 
+#define p_37 (dp_37) 
+#define p_7 (dp_7)  
+#define p_10 (dp_10)  
+#define p_40 (dp_40)  
+#define p_13 (dp_13)  
+
+#define q4F  ((p_24 + p_25 * q_1s + p_26 * q_1s^2 + p_27 * q_1s^3) * q_4s)
+#define q1F  ((p_7 + p_8 * q_1s + p_9 * q_1s^2 + p_10 * q_1s^3) * q_1s)
+#define SR3 ((p_19 * q_19s) * d_1)
+#define SR4 ((p_1 * q_19s) * d_1)
+#define fCIRC (1 + (p_32 / (p_31 * exp(-q_9s)) - 1)*(1/(1 + exp(10*q_9s - 55))))
+#define SRTSH ((p_30 + p_31 * fCIRC * sin(p_0 * q_0s + p_33)) * exp(-q_9s))
+#define fdegTSH (p_34 + p_35/(p_36 + q_7s))
+#define fLAG (p_41 + 2/((p_42/q_8s)^11 + 1))
+#define f4 (p_37 + 5 * p_37/(1+exp(2 * q_8s - 7)))
+#define NL (p_13/(p_14 + q_2s))
+
+#define T4conv  (777.0/p_47)
+#define T3conv  (651.0/p_47)
+#define TSHconv (5.6/p_48)
+#define T4_1 (q_1s * T4conv)
+#define T3_1 (q_4s * T3conv)
+#define TSH_1 (q_7s * TSHconv)
+#define FT3_1 (q4F * T3conv*0.5)
+#define FT4_1 (q1F * T4conv*0.45)
+
+#define t4_base (78.0/T4conv)
+#define t3_base (1.3/T3conv)
+#define tsh_base (1.8/TSHconv)
+
+#define TSH_MIN 0.8
+#define TSH_MAX 1.6
+
+#define epsilon 0.01
+#define tday (24/s0)
+#define tgap (tday/1.0)
+#define td_count 50
+#define totaltime (td_count*tday)
+#define TD (45*tday)
+
+#define t_dur1 (tm - TD)
+#define t_dur2 (tm - (TD+tday))
+
+#define dose_t4 (((1/2)*(((((((((((((((((((((((((((((0.161584652307005*sqrt(et4s))*cos((3.665191429188092*q_0s)))+((0.160801310216553*sqrt(et4s))*cos((3.4033920413889427*q_0s))))+((0.159824825573872*sqrt(et4s))*cos((3.141592653589793*q_0s))))+((0.158587358756687*sqrt(et4s))*cos((2.879793265790643*q_0s))))+((0.156989225020861*sqrt(et4s))*cos((2.617993877991494*q_0s))))+((0.154879752574352*sqrt(et4s))*cos((2.356194490192345*q_0s))))+((0.152023929411938*sqrt(et4s))*cos((2.0943951023931953*q_0s))))+((0.148042363120831*sqrt(et4s))*cos((1.832595714594046*q_0s))))+((0.142300180319075*sqrt(et4s))*cos((1.5707963267948966*q_0s))))+((0.133699623046703*sqrt(et4s))*cos((1.308996938995747*q_0s))))+((0.120313138521757*sqrt(et4s))*cos((1.0471975511965976*q_0s))))+((0.0989159904840812*sqrt(et4s))*cos((0.7853981633974483*q_0s))))+((0.0655885062772657*sqrt(et4s))*cos((0.5235987755982988*q_0s))))+((0.0232632300042517*sqrt(et4s))*cos((0.2617993877991494*q_0s))))-((0.0286560814158674*sqrt(et4s))*sin((3.665191429188092*q_0s))))-((0.0307107880519413*sqrt(et4s))*sin((3.4033920413889427*q_0s))))-((0.0330679843245463*sqrt(et4s))*sin((3.141592653589793*q_0s))))-((0.0357948552822751*sqrt(et4s))*sin((2.879793265790643*q_0s))))-((0.0389775534318080*sqrt(et4s))*sin((2.617993877991494*q_0s))))-((0.0427264555589002*sqrt(et4s))*sin((2.356194490192345*q_0s))))-((0.0471809516766186*sqrt(et4s))*sin((2.0943951023931953*q_0s))))-((0.0525088732131277*sqrt(et4s))*sin((1.832595714594046*q_0s))))-((0.0588842204616870*sqrt(et4s))*sin((1.5707963267948966*q_0s))))-((0.0663903423999065*sqrt(et4s))*sin((1.308996938995747*q_0s))))-((0.0746788797870866*sqrt(et4s))*sin((1.0471975511965976*q_0s))))-((0.0818634379491365*sqrt(et4s))*sin((0.7853981633974483*q_0s))))-((0.0814221328755170*sqrt(et4s))*sin((0.5235987755982988*q_0s))))-((0.0577583455403815*sqrt(et4s))*sin((0.2617993877991494*q_0s)))))*((((((((((((((((((((((((((((((0.00781844058339273*sqrt(et4s))*cos((3.665191429188092*q_0s)))+((0.00902358226101042*sqrt(et4s))*cos((3.4033920413889427*q_0s))))+((0.0105258663266737*sqrt(et4s))*cos((3.141592653589793*q_0s))))+((0.0124296614300359*sqrt(et4s))*cos((2.879793265790643*q_0s))))+((0.0148883287159217*sqrt(et4s))*cos((2.617993877991494*q_0s))))+((0.0181336709413204*sqrt(et4s))*cos((2.356194490192345*q_0s))))+((0.0225272450373411*sqrt(et4s))*cos((2.0943951023931953*q_0s))))+((0.0286527316390453*sqrt(et4s))*cos((1.832595714594046*q_0s))))+((0.0374868590263616*sqrt(et4s))*cos((1.5707963267948966*q_0s))))+((0.0507184855992411*sqrt(et4s))*cos((1.308996938995747*q_0s))))+((0.0713130771760816*sqrt(et4s))*cos((1.0471975511965976*q_0s))))+((0.104231766464814*sqrt(et4s))*cos((0.7853981633974483*q_0s))))+((0.155504819090684*sqrt(et4s))*cos((0.5235987755982988*q_0s))))+((0.220620628741475*sqrt(et4s))*cos((0.2617993877991494*q_0s))))+((0.0440862791013344*sqrt(et4s))*sin((3.665191429188092*q_0s))))+((0.0472473662337559*sqrt(et4s))*sin((3.4033920413889427*q_0s))))+((0.0508738220377635*sqrt(et4s))*sin((3.141592653589793*q_0s))))+((0.0550690081265771*sqrt(et4s))*sin((2.879793265790643*q_0s))))+((0.0599654668181661*sqrt(et4s))*sin((2.617993877991494*q_0s))))+((0.0657330085521542*sqrt(et4s))*sin((2.356194490192345*q_0s))))+((0.0725860795024901*sqrt(et4s))*sin((2.0943951023931953*q_0s))))+((0.0807828818663503*sqrt(et4s))*sin((1.832595714594046*q_0s))))+((0.0905911084025953*sqrt(et4s))*sin((1.5707963267948966*q_0s))))+((0.102138988307549*sqrt(et4s))*sin((1.308996938995747*q_0s))))+((0.114890584287826*sqrt(et4s))*sin((1.0471975511965976*q_0s))))+((0.125943750690979*sqrt(et4s))*sin((0.7853981633974483*q_0s))))+((0.125264819808488*sqrt(et4s))*sin((0.5235987755982988*q_0s))))+((0.0888589931390485*sqrt(et4s))*sin((0.2617993877991494*q_0s))))+(0.12820510668170015*sqrt(et4s))))
+
+#define tg_t4 (tday*s0)
+#define tg_t3 (tday*s0)
+
+#define et4_init (0.25*(((0.763875163033398*sqrt(et4s))+(0.12820510668170015*sqrt(et4s)))^2))
+
+[0, totaltime] tm;
+[0.0, 50*ic_1/s1] q_1;
+[0.0, 50*ic_2/s2] q_2;
+[0.0, 50*ic_3/s3] q_3;
+[0.0, 100*ic_4/s4] q_4;
+[0.0, 100*ic_5/s5] q_5;
+[0.0, 100*ic_6/s6] q_6;
+[0.0, 2*ic_7/s7] q_7;
+[0.0, 10*ic_8/s8] q_8;
+[0.0, 10*ic_9/s9] q_9;
+
+[0, 2*maxt4/s10] q_10;
+[0, 2*maxt4/s11] q_11;
+
+[0.0, 2*ic_14/s14] q_14;
+[0.0, 2*ic_15/s15] q_15;
+[0.0, 2*ic_16/s16] q_16;
+[0.0, 2*ic_17/s17] q_17;
+[0.0, 2*ic_18/s18] q_18;
+[0.0, 2*ic_19/s19] q_19;
+
+[(dd_1 *(1- d_1_err))/s_d1, (dd_1 * (1+ d_1_err))/s_d1] d_1s;
+[(dp_1 *(1- p_1_err))/s_p1, (dp_1 * (1+ p_1_err))/s_p1] p_1s;
+[(dp_19 *(1- p_19_err))/s_p19, (dp_19 * (1+ p_19_err))/s_p19] p_19s;
+
+[0, totaltime] time;
+
+[mint4/s_t4, maxt4/s_t4] et4;
+
+{ mode 1;
+  invt:
+  flow:
+      d/dt[tm] = 1.0;
+      d/dt[q_1] = (SR4 + p_3*q_2s + p_4*q_3s - (p_5 + p_6)*q1F + p_11*q_11s)/s1*s0;
+      d/dt[q_2] = (p_6*q1F - (p_3 + p_12 + NL)*q_2s)/s2*s0;
+      d/dt[q_3] = (p_5*q1F - (p_4 + p_15 / (p_16 + q_3s) + p_17/(p_18 + q_3s))*q_3s)/s3*s0;
+      d/dt[q_4] = (SR3 + p_20 * q_5s + p_21*q_6s - (p_22 + p_23)*q4F )/s4*s0;
+      d/dt[q_5] = (p_23*q4F + NL*q_2s - (p_20 + p_29)*q_5s)/s5*s0;
+      d/dt[q_6] = (p_22*q4F + p_15*q_3s/(p_16 + q_3s) + p_17*q_3s/(p_18 + q_3s) - p_21*q_6s)/s6*s0;
+      
+      d/dt[q_7] = (SRTSH - fdegTSH * q_7s)/s7*s0;
+      d/dt[q_8] = (f4 *q_1s/p_38 + p_37*q_4s/p_39 - p_40*q_8s)/s8*s0;
+      d/dt[q_9] = (fLAG*(q_8s - q_9s))/s9*s0;
+
+      d/dt[q_10] = (dose_t4)/s10*s0;
+      d/dt[q_11] =  (p_43*q_10s - (p_44 + p_11)*q_11s)/s11*s0;   
+      
+      d/dt[q_14]= (-kdelay*q_14s + q_7s)/s14*s0;
+      d/dt[q_15]= kdelay*(q_14s - q_15s)/s15*s0;
+      d/dt[q_16]= kdelay*(q_15s - q_16s)/s16*s0;
+      d/dt[q_17]= kdelay*(q_16s - q_17s)/s17*s0;
+      d/dt[q_18]= kdelay*(q_17s - q_18s)/s18*s0;
+      d/dt[q_19]= kdelay*(q_18s - q_19s)/s19*s0;
+
+      d/dt[et4] = 0.0;
+      d/dt[d_1s] = 0.0;
+      d/dt[p_1s] = 0.0;
+      d/dt[p_19s] = 0.0;
+     
+
+  jump:    
+}
+
+
+init:
+@1  (and (tm = 0.0) (q_1 = ic_1/s1) (q_2 = ic_2/s2) 
+(q_3 = ic_3/s3) (q_4 = ic_4/s4) (q_5 = ic_5/s5) 
+(q_6 = ic_6/s6) (q_7 = ic_7/s7) (q_8 = ic_8/s8)
+(q_14 = ic_14/s14) 
+(q_15 = ic_15/s15) (q_16 = ic_16/s16) (q_17 = ic_17/s17) 
+(q_18 = ic_18/s18) (q_19 = ic_19/s19)
+(q_9 = ic_9/s9) (q_10 = et4_init/s10) (q_11 = ic_11/s11));
+
+goal:
+@1 (and (tm >= TD));
+@1 (and (tm >= TD) (TSH_1 >= 0.5) (TSH_1 <= 2.5));
+
